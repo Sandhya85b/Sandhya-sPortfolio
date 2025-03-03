@@ -8,18 +8,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap");
+
         /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
             color: #555;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
-
-        .navbar {
-            background-color: #1e2a38;
-            border-radius: 0;
-            padding: 15px 0;
-        }
+nav{
+    nav-index: auto;
+}
+    .navbar navbar-expand-lg navbar-dark{
+        position:fixed;
+    }
+       /* Sticky Navbar */
+.navbar {
+    background-color: #1e2a38;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
         .navbar-nav .nav-link {
             color: #fff !important;
@@ -32,45 +46,127 @@
             font-weight: bold;
         }
 
-        /* Hero Section */
-        .hero {
-            background-image: url('https://images.unsplash.com/photo-1517430816045-df4b5a32eb5e');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
+    /* Hero Section */
+.hero {
+    width: 100%;
+    height: 90vh; /* Default height for larger screens */
+    display: flex;
+    gap: 5%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    background-image: url('your-image-url.jpg'); /* Add your background image URL here */
+    background-size: cover;
+    background-position: center;
+}
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            animation: fadeIn 2s ease-in-out;
-        }
+/* Hero Heading */
+.hero h1 {
+    font-size: 3.5rem; /* Large font size for big screens */
+    font-weight: 700;
+    color: rgb(216, 181, 151);
+    margin-bottom: 20px;
+}
 
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
+/* Hero Paragraph */
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
 
-        .hero .btn-primary {
-            background-color: #f39c12;
-            color: #fff;
-            border: none;
-            padding: 10px 30px;
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
+/* Hero Button */
+.hero .btn-primary {
+    background-color: rgb(207, 173, 143);
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
 
-        .hero .btn-primary:hover {
-            background-color: #f1c40f;
-        }
+.hero .btn-primary:hover {
+    background-color: #f1c40f;
+}
+
+/* Responsive Adjustments */
+
+/* Medium Screens (Tablets and below) */
+@media (max-width: 1024px) {
+    .hero {
+        height: 80vh; /* Slightly reduce height */
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem; /* Smaller font size for tablets */
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 1.3rem; /* Slightly smaller paragraph font */
+        margin-bottom: 20px;
+    }
+
+    .hero .btn-primary {
+        padding: 8px 25px;
+        font-size: 1.1rem; /* Adjust button size */
+    }
+}
+
+/* Small Screens (Phones) */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh; /* Further reduce height for smaller screens */
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Even smaller font for mobile screens */
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.1rem; /* Adjust font size for better readability on small screens */
+        margin-bottom: 15px;
+    }
+
+    .hero .btn-primary {
+        padding: 8px 20px;
+        font-size: 1rem; /* Smaller button for mobile */
+    }
+}
+
+/* Very Small Screens (Extra small phones) */
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh; /* Reduce height even more for tiny screens */
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Smaller heading font for very small screens */
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust paragraph size */
+        margin-bottom: 10px;
+    }
+
+    .hero .btn-primary {
+        padding: 8px 15px;
+        font-size: 0.9rem; /* Smaller button for extra small screens */
+    }
+}
+
+
 
         /* About Section */
         #about {
@@ -81,12 +177,19 @@
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             margin: 30px 0;
             border-radius: 10px;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
         }
 
         #about img {
             border-radius: 50%;
             max-width: 250px;
-            border: 6px solid #f39c12;
+            border: 6px solid rgb(216, 181, 151);
+            transition: transform 0.3s ease;
+        }
+
+        #about img:hover {
+            transform: scale(1.1);
         }
 
         #about h2 {
@@ -112,6 +215,8 @@
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             margin: 30px 0;
             border-radius: 10px;
+            opacity: 0;
+            animation: fadeInUp 1s 0.5s forwards;
         }
 
         #skills h2 {
@@ -126,16 +231,18 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 30px;
+            animation: fadeInUp 1s 1s forwards;
         }
 
         .skill {
             text-align: center;
             margin: 0;
             width: 120px;
-            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 5px 20px  rgb(216, 181, 151);
             padding: 20px;
             border-radius: 10px;
             transition: all 0.3s ease;
+            background-color: #fff;
         }
 
         .skill img {
@@ -154,20 +261,101 @@
             box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
         }
 
+        .projects row{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+/* Carousel styles */
+#projectCarousel img{
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures images are properly cropped */
+    border-radius: 10px;
+}
+.carousel {
+    margin-top: 20px;
+}
+
+.carousel-inner {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures images are properly cropped */
+    border-radius: 10px;
+}
+
+/* Add spacing and hover effects */
+.card {
+    width: fit-content;
+    align-items: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color:  rgb(216, 181, 151);
+}
+
+.card-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+    padding: 10%;
+    background-color:  rgb(216, 181, 151);
+}
+
+.card-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    
+}
+
+.card-text a {
+    color: rgb(216, 181, 151);
+    font-size: 1.1rem;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-text a:hover {
+    color: rgb(216, 181, 151);
+}
+
+
+#projects .container{
+    box-shadow: 0px 6px 20px rgb(216, 181, 151);
+
+}
         /* Projects Section */
         #projects {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 80px 0;
             background-color: #fff;
+            opacity: 0;
+            animation: fadeInUp 1s 1.5s forwards;
         }
 
         .projects .card {
+            
             border-radius: 15px;
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 6px 20px rgb(216, 181, 151);
             overflow: hidden;
             border: none;
+            transition: all 0.3s ease;
         }
 
         .projects .card-body {
+            border: 2px solid  rgb(216, 181, 151);
             background-color: #f8f9fa;
             padding: 30px;
         }
@@ -181,14 +369,22 @@
             font-size: 1rem;
         }
 
+        .projects .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
         /* Resume Section */
         #resume {
+           
             padding: 80px 0;
             background-color: #f1f1f1;
             text-align: center;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             margin: 30px 0;
             border-radius: 10px;
+            opacity: 0;
+            animation: fadeInUp 1s 2s forwards;
         }
 
         #resume h2 {
@@ -198,7 +394,7 @@
         }
 
         #resume .btn-download {
-            background-color: #f39c12;
+            background-color: rgb(216, 181, 151);
             color: #fff;
             font-size: 1.2rem;
             padding: 15px 40px;
@@ -208,19 +404,47 @@
         }
 
         #resume .btn-download:hover {
-            background-color: #f1c40f;
+            background-color:rgb(216, 181, 151);
         }
 
         /* Contact Section */
         #contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             padding: 80px 0;
-            background-color: #1e2a38;
-            color: #fff;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            opacity: 0;
+            animation: fadeInUp 1s 1.5s forwards;
             margin: 30px 0;
             border-radius: 10px;
+            opacity: 0;
+            animation: fadeInUp 1s 2.5s forwards;
+            
         }
+        #contact .container{
+            padding: 2%;
+            box-shadow: 0 8px 15px rgb(216, 181, 151);;
 
+        }
+    #contact h2{
+        
+        font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+    }
+#contact-form{
+    display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 0;
+           
+            opacity: 0;
+            animation: fadeInUp 1s 1.5s forwards;
+            padding: 80px 0;
+}
         #contact h2 {
             font-size: 2.2rem;
             font-weight: 700;
@@ -229,9 +453,15 @@
         }
 
         #contact a {
-            color: #f39c12;
-            font-size: 1.5rem;
+            float: right;
+            color:rgb(59, 104, 188);
+            font-size: 2rem;
+            padding: 1%;
             margin: 0 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 8px 15px rgb(216, 181, 151);;
+
         }
 
         #contact a:hover {
@@ -240,15 +470,17 @@
 
         #contact-form input,
         #contact-form textarea {
+            
             width: 100%;
             padding: 15px;
             margin: 10px 0;
             border-radius: 5px;
-            border: 2px solid #BDC3C7;
+            border: 2px solid  rgb(216, 181, 151);
         }
 
         #contact-form button {
-            background-color: #f39c12;
+           justify-content: center;
+            background-color: rgb(216, 181, 151);
             border: none;
             padding: 15px 30px;
             font-size: 1.1rem;
@@ -258,7 +490,7 @@
         }
 
         #contact-form button:hover {
-            background-color: #f1c40f;
+            background-color: rgb(216, 181, 151);
         }
 
         footer {
@@ -266,6 +498,9 @@
             color: #fff;
             padding: 20px;
             text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
         @keyframes fadeIn {
@@ -275,6 +510,18 @@
 
             100% {
                 opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
@@ -302,11 +549,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Experienced Web Developer & Engineer</p>
+    <section class="hero" ><img src="https://i.pinimg.com/736x/72/99/35/729935005ccfe0e55f6f04eeca4184b5.jpg">
+       <div> <h1>Welcome to My Portfolio</h1>
+        <p>Aspired Software Developer & Engineer</p>
         <a href="#contact" class="btn btn-primary">Get in Touch</a>
+
+    </div>
+
+    </a> 
     </section>
+  
 
     <!-- About Section -->
     <section id="about">
@@ -346,7 +598,7 @@
                     <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
                     <span>MongoDB</span>
                 </div>
-                <div class="skill">
+                <!-- <div class="skill">
                     <img src="https://cdn-icons-png.flaticon.com/64/733/733579.png" alt="Manual Testing">
                     <span>Manual Testing</span>
                 </div>
@@ -357,27 +609,25 @@
                 <div class="skill">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Jest-logo.svg" alt="Jest">
                     <span>Jest</span>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
+            
             <h2 class="fw-bold text-center">Projects</h2>
+            <img src="https://i.postimg.cc/XYHkVvwK/Screenshot-2025-03-03-134126.png" alt="Project Image" style="max-width: 100%; height: auto;">                                </div>
+
             <div class="projects row">
                 <div class="col-md-6">
                     <div class="card">
+                        <!-- Carousel -->
                         <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://lh3.googleusercontent.com/d/1pGrMT_TM2v8VUVKa0iLOLCY2eR9hxGA0" class="d-block w-100" alt="Project Screenshot 1">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://lh3.googleusercontent.com/d/1k0WH39B4rKF23I58de1CbfYIb8FjjqU3" class="d-block w-100" alt="Project Screenshot 2">
-                                </div>
-                            </div>
+                          
+                             
+                            <!-- Carousel Controls -->
                             <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
@@ -390,7 +640,7 @@
                         <div class="card-body">
                             <h5 class="card-title">GlowZoneCare</h5>
                             <p class="card-text">
-                                <a href="https://sandhya85b.github.io/Project-Masai/" target="_blank" rel="noopener noreferrer">
+                                <a href="https://sandhya85b.github.io/GlowZoneCare_Lets-shine/" target="_blank" rel="noopener noreferrer">
                                     Visit Project
                                 </a>
                             </p>
@@ -400,7 +650,6 @@
             </div>
         </div>
     </section>
-
     <!-- Resume Section -->
     <section id="resume">
         <div class="container">
@@ -415,23 +664,25 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="fw-bold">Contact Me</h2>
-            <p>Email: sandhya85.b@gmail.com</p>
-            <p>
-                <a href="https://www.linkedin.com/in/sandhya-b-856776285/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/Sandhya85b" target="_blank">
+            <div class="contact-links" >
+                <a href="https://github.com/sandhya85b" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
-            </p>
-            <form id="contact-form" onsubmit="sendEmail(event)">
-                <input type="text" id="name" name="name" placeholder="Your Name" required />
-                <input type="email" id="email" name="email" placeholder="Your Email" required />
-                <input type="text" id="subject" name="subject" placeholder="Subject" required />
-                <textarea id="message" name="message" placeholder="Message" required></textarea>
+                <a href="https://www.linkedin.com/in/sandhyabonthu/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:sandhya85.b@outlook.com" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <h2 class="fw-bold">Get in Touch</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
+          
         </div>
     </section>
 
@@ -440,17 +691,8 @@
         <p>&copy; 2025 Sandhya Bonthu. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        function sendEmail(event) {
-            event.preventDefault();
-            
-            // Use a simple mail service or backend API for email sending
-            alert("Message Sent Successfully!");
-            document.getElementById("contact-form").reset();
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -1,718 +1,155 @@
+<!-- Portfolio Website using Kelly Theme -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandhya Bonthu - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandhya Bonthu | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap");
-
-        /* General Styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            color: #555;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-nav{
-    nav-index: auto;
-}
-    .navbar navbar-expand-lg navbar-dark{
-        position:fixed;
-    }
-       /* Sticky Navbar */
-.navbar {
-    background-color: #1e2a38;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-        .navbar-nav .nav-link {
-            color: #fff !important;
-            font-weight: 600;
-        }
-
-        .navbar-brand {
-            color: #fff !important;
-            font-size: 1.9rem;
-            font-weight: bold;
-        }
-
-    /* Hero Section */
-.hero {
-    width: 100%;
-    height: 90vh; /* Default height for larger screens */
-    display: flex;
-    gap: 5%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 20px;
-    animation: fadeIn 2s ease-in-out;
-    position: relative;
-    background-image: url('your-image-url.jpg'); /* Add your background image URL here */
-    background-size: cover;
-    background-position: center;
-}
-
-/* Hero Heading */
-.hero h1 {
-    font-size: 3.5rem; /* Large font size for big screens */
-    font-weight: 700;
-    color: rgb(216, 181, 151);
-    margin-bottom: 20px;
-}
-
-/* Hero Paragraph */
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    font-weight: 500;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Hero Button */
-.hero .btn-primary {
-    background-color: rgb(207, 173, 143);
-    color: #fff;
-    border: none;
-    padding: 10px 30px;
-    font-size: 1.2rem;
-    transition: 0.3s;
-}
-
-.hero .btn-primary:hover {
-    background-color: #f1c40f;
-}
-
-/* Responsive Adjustments */
-
-/* Medium Screens (Tablets and below) */
-@media (max-width: 1024px) {
-    .hero {
-        height: 80vh; /* Slightly reduce height */
-        padding: 15px;
-    }
-
-    .hero h1 {
-        font-size: 2.8rem; /* Smaller font size for tablets */
-        margin-bottom: 15px;
-    }
-
-    .hero p {
-        font-size: 1.3rem; /* Slightly smaller paragraph font */
-        margin-bottom: 20px;
-    }
-
-    .hero .btn-primary {
-        padding: 8px 25px;
-        font-size: 1.1rem; /* Adjust button size */
-    }
-}
-
-/* Small Screens (Phones) */
-@media (max-width: 768px) {
-    .hero {
-        height: 70vh; /* Further reduce height for smaller screens */
-        padding: 10px;
-        flex-direction: column;
-    }
-
-    .hero h1 {
-        font-size: 2.2rem; /* Even smaller font for mobile screens */
-        margin-bottom: 10px;
-    }
-
-    .hero p {
-        font-size: 1.1rem; /* Adjust font size for better readability on small screens */
-        margin-bottom: 15px;
-    }
-
-    .hero .btn-primary {
-        padding: 8px 20px;
-        font-size: 1rem; /* Smaller button for mobile */
-    }
-}
-
-/* Very Small Screens (Extra small phones) */
-@media (max-width: 480px) {
-    .hero {
-        height: 60vh; /* Reduce height even more for tiny screens */
-        padding: 10px;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem; /* Smaller heading font for very small screens */
-        margin-bottom: 10px;
-    }
-
-    .hero p {
-        font-size: 1rem; /* Adjust paragraph size */
-        margin-bottom: 10px;
-    }
-
-    .hero .btn-primary {
-        padding: 8px 15px;
-        font-size: 0.9rem; /* Smaller button for extra small screens */
-    }
-}
-
-
-
-        /* About Section */
-        #about {
-            padding: 80px 0;
-            background-color: #fff;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            margin: 30px 0;
-            border-radius: 10px;
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-        }
-
-        #about img {
-            border-radius: 50%;
-            max-width: 250px;
-            border: 6px solid rgb(216, 181, 151);
-            transition: transform 0.3s ease;
-        }
-
-        #about img:hover {
-            transform: scale(1.1);
-        }
-
-        #about h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-top: 20px;
-        }
-
-        #about p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-top: 20px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Skills Section */
-        #skills {
-            padding: 80px 0;
-            background-color: #f1f1f1;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            margin: 30px 0;
-            border-radius: 10px;
-            opacity: 0;
-            animation: fadeInUp 1s 0.5s forwards;
-        }
-
-        #skills h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .skills-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            animation: fadeInUp 1s 1s forwards;
-        }
-
-        .skill {
-            text-align: center;
-            margin: 0;
-            width: 120px;
-            box-shadow: 0px 5px 20px  rgb(216, 181, 151);
-            padding: 20px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            background-color: #fff;
-        }
-
-        .skill img {
-            width: 70px;
-            height: 70px;
-            margin-bottom: 10px;
-        }
-
-        .skill span {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .skill:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .projects row{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-/* Carousel styles */
-#projectCarousel img{
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Ensures images are properly cropped */
-    border-radius: 10px;
-}
-.carousel {
-    margin-top: 20px;
-}
-
-.carousel-inner {
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Ensures images are properly cropped */
-    border-radius: 10px;
-}
-
-/* Add spacing and hover effects */
-.card {
-    width: fit-content;
-    align-items: center;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color:  rgb(216, 181, 151);
-}
-
-.card-body {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  
-    padding: 10%;
-    background-color:  rgb(216, 181, 151);
-}
-
-.card-title {
-    font-size: 1.6rem;
-    font-weight: bold;
+  </head>
+  <body>
+    <header>
+      <div class="profile-container">
+        <h1>Sandhya Bonthu</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+<main>
+    <section>
+        <h1>Welcome to my Portfolio! </h3>
+      <img
+        src="https://res.cloudinary.com/dgbdcjnkw/image/upload/v1739433239/lfagxtdik6chbivc7vn2.jpg"
+        alt="Sandhya Bonthu"
+        class="profile-pic"
+      />
+      <p>Software Developer & Tester</p>
+    </section>
+    <section id="about" class="animated-section">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm Sandhya Bonthu, a passionate software developer and tester with
+        expertise in web development and automation testing.
     
-}
-
-.card-text a {
-    color: rgb(216, 181, 151);
-    font-size: 1.1rem;
-    align-items: center;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.card-text a:hover {
-    color: rgb(216, 181, 151);
-}
-
-
-#projects .container{
-    box-shadow: 0px 6px 20px rgb(216, 181, 151);
-
-}
-        /* Projects Section */
-        #projects {
-            
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 0;
-            background-color: #fff;
-            opacity: 0;
-            animation: fadeInUp 1s 1.5s forwards;
-        }
-
-        .projects .card {
-            
-            border-radius: 15px;
-            box-shadow: 0px 6px 20px rgb(216, 181, 151);
-            overflow: hidden;
-            border: none;
-            transition: all 0.3s ease;
-        }
-
-        .projects .card-body {
-            border: 2px solid  rgb(216, 181, 151);
-            background-color: #f8f9fa;
-            padding: 30px;
-        }
-
-        .projects .card-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .projects .card-text {
-            font-size: 1rem;
-        }
-
-        .projects .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Resume Section */
-        #resume {
-           
-            padding: 80px 0;
-            background-color: #f1f1f1;
-            text-align: center;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            margin: 30px 0;
-            border-radius: 10px;
-            opacity: 0;
-            animation: fadeInUp 1s 2s forwards;
-        }
-
-        #resume h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        #resume .btn-download {
-            background-color: rgb(216, 181, 151);
-            color: #fff;
-            font-size: 1.2rem;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        #resume .btn-download:hover {
-            background-color:rgb(216, 181, 151);
-        }
-
-        /* Contact Section */
-        #contact {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 0;
-            background-color: #fff;
-            opacity: 0;
-            animation: fadeInUp 1s 1.5s forwards;
-            margin: 30px 0;
-            border-radius: 10px;
-            opacity: 0;
-            animation: fadeInUp 1s 2.5s forwards;
-            
-        }
-        #contact .container{
-            padding: 2%;
-            box-shadow: 0 8px 15px rgb(216, 181, 151);;
-
-        }
-    #contact h2{
-        
-        font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-    }
-#contact-form{
-    display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 0;
-           
-            opacity: 0;
-            animation: fadeInUp 1s 1.5s forwards;
-            padding: 80px 0;
-}
-        #contact h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        #contact a {
-            float: right;
-            color:rgb(59, 104, 188);
-            font-size: 2rem;
-            padding: 1%;
-            margin: 0 10px;
-            background-color: #fff;
-            border-radius: 50%;
-            box-shadow: 0 8px 15px rgb(216, 181, 151);;
-
-        }
-
-        #contact a:hover {
-            color: #f1c40f;
-        }
-
-        #contact-form input,
-        #contact-form textarea {
-            
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 2px solid  rgb(216, 181, 151);
-        }
-
-        #contact-form button {
-           justify-content: center;
-            background-color: rgb(216, 181, 151);
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #contact-form button:hover {
-            background-color: rgb(216, 181, 151);
-        }
-
-        footer {
-            background-color: #1e2a38;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Sandhya Bonthu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" ><img src="https://i.pinimg.com/736x/72/99/35/729935005ccfe0e55f6f04eeca4184b5.jpg">
-       <div> <h1>Welcome to My Portfolio</h1>
-        <p>Aspired Software Developer & Engineer</p>
-        <a href="#contact" class="btn btn-primary">Get in Touch</a>
-
-    </div>
-
-    </a> 
-    </section>
-  
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="fw-bold">About Me</h2>
-            <img src="https://res.cloudinary.com/dgbdcjnkw/image/upload/v1739433239/lfagxtdik6chbivc7vn2.jpg" alt="Sandhya Bonthu">
-            <p class="lead">I am a passionate Web Engineer with expertise in Front-End and Back-End development. Skilled in HTML, CSS, JavaScript, Node.js, Express, MongoDB, and Agile practices. I'm committed to creating responsive and elegant web applications.</p>
-        </div>
+        I hold an M.Tech in Electronics and Communication Engineering and have
+        completed advanced training in software testing and web development.
+     
+        My journey includes working on real-world projects involving JavaScript,
+        Node.js, Express, MongoDB, and Selenium automation. I am driven by a
+        passion for learning and continuously improving my skills.
+      
+      
+        Currently, I am exploring cloud deployments, DevOps, and performance
+        testing.
+      </p>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="fw-bold text-center">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <img src="https://cdn-icons-png.flaticon.com/64/5968/5968292.png" alt="JavaScript">
-                    <span>JavaScript</span>
-                </div>
-                <div class="skill">
-                    <img src="https://cdn-icons-png.flaticon.com/64/174/174854.png" alt="HTML">
-                    <span>HTML</span>
-                </div>
-                <div class="skill">
-                    <img src="https://cdn-icons-png.flaticon.com/64/732/732190.png" alt="CSS">
-                    <span>CSS</span>
-                </div>
-                <div class="skill">
-                    <img src="https://cdn-icons-png.flaticon.com/64/919/919825.png" alt="Node.js">
-                    <span>Node.js</span>
-                </div>
-                <div class="skill">
-                    <img src="https://miro.medium.com/v2/resize:fit:150/format:webp/1*i2fRBk3GsYLeUk_Rh7AzHw.png" alt="Express.js">
-                    <span>Express.js</span>
-                </div>
-                <div class="skill">
-                    <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
-                    <span>MongoDB</span>
-                </div>
-                <!-- <div class="skill">
-                    <img src="https://cdn-icons-png.flaticon.com/64/733/733579.png" alt="Manual Testing">
-                    <span>Manual Testing</span>
-                </div>
-                <div class="skill">
-                    <img src="https://cdn.iconscout.com/icon/free/png-256/github-153-722741.png" alt="GitHub">
-                    <span>GitHub</span>
-                </div>
-                <div class="skill">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Jest-logo.svg" alt="Jest">
-                    <span>Jest</span>
-                </div> -->
-            </div>
-        </div>
+    <section id="skills" class="animated-section">
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill"><i class="fab fa-html5"></i> HTML</div>
+        <div class="skill"><i class="fab fa-css3-alt"></i> CSS</div>
+        <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
+        <div class="skill"><i class="fas fa-database"></i> MongoDB</div>
+        <div class="skill"><i class="fab fa-react"></i> React</div>
+        <div class="skill"><i class="fas fa-code"></i> Express.js</div>
+        <div class="skill"><i class="fas fa-bug"></i> Selenium</div>
+        <div class="skill"><i class="fas fa-tasks"></i> JIRA</div>
+        <div class="skill"><i class="fas fa-vial"></i> TestNG</div>
+        <div class="skill"><i class="fab fa-git-alt"></i> Git</div>
+        <div class="skill"><i class="fab fa-github"></i> GitHub</div>
+      </div>
     </section>
-
-    <section id="projects">
-        <div class="container">
-            
-            <h2 class="fw-bold text-center">Projects</h2>
-            <img src="https://i.postimg.cc/XYHkVvwK/Screenshot-2025-03-03-134126.png" alt="Project Image" style="max-width: 100%; height: auto;">                                </div>
-
-            <div class="projects row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <!-- Carousel -->
-                        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-                          
-                             
-                            <!-- Carousel Controls -->
-                            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">GlowZoneCare</h5>
-                            <p class="card-text">
-                                <a href="https://sandhya85b.github.io/GlowZoneCare_Lets-shine/" target="_blank" rel="noopener noreferrer">
-                                    Visit Project
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Resume Section -->
+</div>
+   
     <section id="resume">
-        <div class="container">
-            <h2 class="fw-bold">Download My Resume</h2>
-            <p>Click below to download my latest resume in PDF format.</p>
-            <a href="https://drive.google.com/file/d/1WczJvhoOhglZkSKIUsa0MiiND3rAVFiT/view?usp=drive_link" target="_blank" class="btn btn-download">
-                Download Resume
-            </a>
+        <h2>My Resume</h2>
+        <div class="resume-container">
+            <iframe src="https://drive.google.com/file/d/1WczJvhoOhglZkSKIUsa0MiiND3rAVFiT/preview" class="resume-iframe"></iframe>
+            <a href="https://drive.google.com/uc?export=download&id=1WczJvhoOhglZkSKIUsa0MiiND3rAVFiT" class="download-btn" download>Download Resume</a>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="contact-links" >
-                <a href="https://github.com/sandhya85b" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/sandhyabonthu/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:sandhya85.b@outlook.com" target="_blank">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-            <h2 class="fw-bold">Get in Touch</h2>
-            <form id="contact-form" action="https://formspree.io/f/{your_form_id}" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-          
+    
+    <section id="projects" class="animated-section">
+        <h2>Projects</h2>
+        <div class="project">
+          <img src="https://i.postimg.cc/XYHkVvwK/Screenshot-2025-03-03-134126.png" alt="Skincare Website Screenshot" />
+          <h3>GlowZoneCare - Skincare E-commerce Platform</h3>
+          <p>
+            A fully functional skincare e-commerce website where users can browse products, filter and sort listings, add items to their cart or wishlist, and securely register/login to manage their accounts.
+          </p>
+          <ul>
+            <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>Key Features:</strong> Product filtering & sorting, cart management, wishlist functionality, user authentication</li>
+          </ul>
+          <a href="https://sandhya85b.github.io/GlowZoneCare_Lets-shine/" target="_blank">View Project</a>
         </div>
-    </section>
+      </section>
+      
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Sandhya Bonthu. All rights reserved.</p>
-    </footer>
+    <section id="contact" class="animated-section">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <p>Email: <a href="mailto:sandhya@example.com">sandhya@example.com</a></p>
+      <p>
+        <i class="fab fa-linkedin"></i>
+        <a href="https://linkedin.com/in/sandhyabonthu"
+          >linkedin.com/in/sandhyabonthu</a
+        >
+      </p>
+      <p>
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/sandhya">github.com/sandhya</a>
+      </p>
+    </section>
+</main>
+  </body>
+
     <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(this);
-
-      fetch("http://localhost:3000/send-email", {
-        method: "POST",
-        body: formData
-      })
-      .then(response => response.text())
-      .then(data => {
-        alert(data);
-      })
-      .catch(error => {
-        alert("Error: " + error);
-      });
-    });
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          alert("Your message has been sent successfully!");
+        });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const resumeSection = document.getElementById("resume");
+            function checkVisibility() {
+                const rect = resumeSection.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    resumeSection.classList.add("visible");
+                }
+            }
+            window.addEventListener("scroll", checkVisibility);
+            checkVisibility();
+        });
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="server.js"></script>
-</body>
-
+  
+  <footer>
+    <p>&copy; 2025 Sandhya Bonthu. All Rights Reserved.</p>
+  </footer>
 </html>

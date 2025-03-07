@@ -54,6 +54,7 @@ h2 {
     transform: translateY(0);
   }
 }
+
 /* Header Styling */
 header {
   margin-top: 0%;
@@ -141,10 +142,10 @@ nav ul li a:hover {
 
 /* Responsive Sections */
 section {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  /* max-width: 1200px; */
   margin: 20px auto;
-  padding: 50px 20px;
+  padding: 5%;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -180,6 +181,11 @@ section:hover {
   bottom: -40px;
   animation: arrowBounce 1.5s infinite ease-in-out;
 }
+#about p{
+  padding: 5%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -193,6 +199,8 @@ section:hover {
 
 /* Skills Section */
 .skills-container {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -201,6 +209,7 @@ section:hover {
 }
 
 .skill {
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,16 +230,21 @@ section:hover {
 }
 
 /* Project Section Adjustments */
-.project-section {
+
+/* .project{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-}
+} */
 
 .project {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   background: white;
-  margin: 5%;
+  margin: 10%;
   padding: 5%;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -303,8 +317,13 @@ section:hover {
     padding: 0%;
     margin: 0%;
 }
+
   .project-card {
     width: 90%;
+   
+  }
+  #projects{
+    padding: 5%;
   }
 
 }
@@ -322,13 +341,17 @@ section:hover {
 
 
 /* resume */
+#resume .resume-container iframe{
+  width: 100%;
+  max-height: max-content;
+}
 .resume-container {
   text-align: center;
   margin: 40px auto;
   padding: 100px 20px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
   width: 90%;
 }
 
@@ -339,7 +362,7 @@ section:hover {
 }
 
 .resume-container iframe {
-  width: 90%;
+  width: 100%;
   max-width: 900px;
   height: 1000px; /* Increased height */
   border: 1px solid #ddd;
@@ -372,6 +395,15 @@ section:hover {
 
 /* Contact Section */
 
+#contact{
+  background-image: url("https://t3.ftcdn.net/jpg/05/30/96/04/240_F_530960431_c8fPd3HansYvrSJ4fJxZqp9OhjQmYoll.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
 #contact-form {
   display: flex;
   flex-direction: column;
@@ -389,7 +421,7 @@ section:hover {
 }
 
 #contact-form button {
-  background: #007bff;
+  background: #0f335b;
   color: white;
   padding: 10px;
   border: none;

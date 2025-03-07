@@ -31,7 +31,10 @@
   <main>
     
     <section class="first">
-      <h1>Welcome to my Portfolio! </h3>
+      <marquee behavior="scroll" direction="left">
+        <h1>Welcome to my Portfolio! </h1>
+      </marquee>
+      
         <img src="https://res.cloudinary.com/dgbdcjnkw/image/upload/v1739433239/lfagxtdik6chbivc7vn2.jpg"
           alt="Sandhya Bonthu" class="profile-pic" />
         <p>Software Developer & Tester</p>
@@ -192,24 +195,6 @@
   });
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script>
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      scrub: 1,
-      pin: true,
-      trigger: "#pin-windmill",
-      start: "50% 50%",
-      endTrigger: "#pin-windmill-wrap",
-      end: "bottom 50%",
-    },
-  });
-
-  tl.to("#pin-windmill-svg", {
-    rotateZ: 900,
-  });
-</script>
 
 
 <footer>

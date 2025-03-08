@@ -1,204 +1,325 @@
-<!-- Portfolio Website using Kelly Theme -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandhya Bonthu - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sandhya Bonthu - Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2>Bonthu Sandhya</h2>
+        <ul class="menu">
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="slider-container">
+          <input type="range" id="slider" min="5" max="100" value="50" />
+          <div class="tooltip" id="tooltip">50</div>
+          <p id="sliderValue"></p>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
 
-</head>
-
-<body>
-  <header>
-    <div class="profile-container">
-      <h1>Sandhya Bonthu</h1>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">☰
-      <nav>
+      <div class="mobile-menu" id="mobileMenu">
         <ul>
           <li><a href="#about">About Me</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
-    </div>
-  </header>
-  <main>
-    
-    <section class="first">
+      </div>
+    </header>
+    <main>
       <marquee behavior="scroll" direction="left">
-        <h1>Welcome to my Portfolio! </h1>
+        <h1>Welcome to my Portfolio!</h1>
       </marquee>
-      
-        <img src="https://res.cloudinary.com/dgbdcjnkw/image/upload/v1739433239/lfagxtdik6chbivc7vn2.jpg"
-          alt="Sandhya Bonthu" class="profile-pic" />
-        <p>Software Developer & Tester</p>
-    </section>
-    <section id="about" class="animated-section">
-      <h2>About Me</h2>
-      <p>
-        Hi! I'm Sandhya Bonthu, a passionate software developer and tester with
-        expertise in web development and automation testing.
-
-        I hold an M.Tech in Electronics and Communication Engineering and have
-        completed advanced training in software testing and web development.
-
-        My journey includes working on real-world projects involving JavaScript,
-        Node.js, Express, MongoDB, and Selenium automation. I am driven by a
-        passion for learning and continuously improving my skills.
-
-        Currently, I am exploring Software developer , Web Engineer, Software Testing
-      </p>
-    </section>
-
-    <section id="skills" class="animated-section">
-      <h2>Technical Skills</h2>
-      <p>Proficient in web development and software testing with hands-on experience in building and testing
-        applications efficiently.</p>
-      <div class="skills-container">
-        <div class="skill"><i class="fab fa-html5"></i> HTML - Semantic structuring for accessible web pages</div>
-        <div class="skill"><i class="fab fa-css3-alt"></i> CSS - Responsive styling with modern frameworks</div>
-        <div class="skill"><i class="fab fa-js"></i> JavaScript - Dynamic and interactive UI development</div>
-        <div class="skill"><i class="fab fa-node-js"></i> Node.js - Backend API development with Express.js</div>
-        <div class="skill"><i class="fas fa-database"></i> MongoDB - NoSQL database management and optimization</div>
-        <div class="skill"><i class="fas fa-code"></i> Express.js - Efficient API development with middleware</div>
-        <div class="skill"><i class="fas fa-bug"></i> Selenium - Automated browser testing for web apps</div>
-        <div class="skill"><i class="fas fa-tasks"></i> JIRA - Agile project tracking and test case management</div>
-        <div class="skill"><i class="fas fa-vial"></i> Manual Testing - Writing test cases, bug reporting, and
-          validation</div>
-        <div class="skill"><i class="fab fa-git-alt"></i> Git - Version control for collaborative development</div>
-        <div class="skill"><i class="fab fa-github"></i> GitHub - Repository hosting and CI/CD integration</div>
+      <div class="firstAbout">
+        <div class="first">
+          <img
+            src="https://res.cloudinary.com/dgbdcjnkw/image/upload/v1739433239/lfagxtdik6chbivc7vn2.jpg"
+            alt="Sandhya Bonthu"
+            class="profile-pic"
+          />
+          <p>Software Developer & Tester</p>
+        </div>
+        <section id="about" class="animated-section">
+          <h2>About Me</h2>
+          <p>
+            Hi! I'm Sandhya Bonthu, a passionate software developer and tester
+            with expertise in web development and automation testing. I hold an
+            M.Tech in Electronics and Communication Engineering and have
+            completed advanced training in software testing and web development.
+            My journey includes working on real-world projects involving
+            JavaScript, Node.js, Express, MongoDB, and Selenium automation. I am
+            driven by a passion for learning and continuously improving my
+            skills. Currently, I am exploring Software developer , Web Engineer,
+            Software Testing
+          </p>
+        </section>
       </div>
-    </section>
-
-    </div>
-
-    <section id="resume">
-      <h2>My Resume</h2>
-      <div class="resume-container">
-        <iframe src="https://drive.google.com/file/d/1WczJvhoOhglZkSKIUsa0MiiND3rAVFiT/preview" class="resume-iframe"
-          target="_blank"></iframe>
-        <a href="https://drive.google.com/uc?export=download&id=1WczJvhoOhglZkSKIUsa0MiiND3rAVFiT" target="_blank"
-          class="download-btn" download>Download Resume</a>
-      </div>
-    </section>
-
-    <section id="projects" class="animated-section">
-      <h2>Projects</h2>
-      <div class="project">
-        <img src="https://i.postimg.cc/XYHkVvwK/Screenshot-2025-03-03-134126.png" alt="Skincare Website Screenshot" />
-        <h3>GlowZoneCare - Skincare E-commerce Platform</h3>
+      <section id="skills" class="animated-section">
+        <h2>Technical Skills</h2>
         <p>
-          A fully functional skincare e-commerce website where users can browse products, filter and sort listings, add
-          items to their cart or wishlist, and securely register/login to manage their accounts.
+          Proficient in web development and software testing with hands-on
+          experience in building and testing applications efficiently.
         </p>
-        <ul>
-          <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript</li>
-          <li><strong>Key Features:</strong> Product filtering & sorting, cart management, wishlist functionality, user
-            authentication</li>
-        </ul>
-        <a href="https://sandhya85b.github.io/GlowZoneCare_Lets-shine/" target="_blank">View Project</a>
-      </div>
-    </section>
+        <div class="skills-container">
+          <div class="skill">
+            <i class="fab fa-html5"></i> HTML - Semantic structuring for
+            accessible web pages
+          </div>
+          <div class="skill">
+            <i class="fab fa-css3-alt"></i> CSS - Responsive styling with modern
+            frameworks
+          </div>
+          <div class="skill">
+            <i class="fab fa-js"></i> JavaScript - Dynamic and interactive UI
+            development
+          </div>
+          <div class="skill">
+            <i class="fab fa-node-js"></i> Node.js - Backend API development
+            with Express.js
+          </div>
+          <div class="skill">
+            <i class="fas fa-database"></i> MongoDB - NoSQL database management
+            and optimization
+          </div>
+          <div class="skill">
+            <i class="fas fa-code"></i> Express.js - Efficient API development
+            with middleware
+          </div>
+          <div class="skill">
+            <i class="fas fa-bug"></i> Selenium - Automated browser testing for
+            web apps
+          </div>
+          <div class="skill">
+            <i class="fas fa-tasks"></i> JIRA - Agile project tracking and test
+            case management
+          </div>
+          <div class="skill">
+            <i class="fas fa-vial"></i> Manual Testing - Writing test cases, bug
+            reporting, and validation
+          </div>
+          <div class="skill">
+            <i class="fab fa-git-alt"></i> Git - Version control for
+            collaborative development
+          </div>
+          <div class="skill">
+            <i class="fab fa-github"></i> GitHub - Repository hosting and CI/CD
+            integration
+          </div>
+        </div>
+      </section>
 
+      <section id="resume">
+        <h2>My Resume</h2>
+        <div class="resume-container">
+          <iframe
+            src="https://drive.google.com/file/d/1WczJvhoOhglZkSKIUsa0MiiND3rAVFiT/preview"
+            class="resume-iframe"
+            target="_blank"
+          ></iframe>
+          <a
+            href="https://drive.google.com/uc?export=download&id=1WczJvhoOhglZkSKIUsa0MiiND3rAVFiT"
+            target="_blank"
+            class="download-btn"
+            download
+            >Download Resume</a
+          >
+        </div>
+      </section>
 
-    <section id="contact" class="animated-section">
-      <h2>Contact Me</h2>
-      <form id="contact-form">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+      <section id="projects" class="animated-section">
+        <h2>Projects</h2>
+        <div class="project">
+          <img
+            src="https://i.postimg.cc/XYHkVvwK/Screenshot-2025-03-03-134126.png"
+            alt="Skincare Website Screenshot"
+          />
+          <h3>GlowZoneCare - Skincare E-commerce Platform</h3>
+          <p>
+            A fully functional skincare e-commerce website where users can
+            browse products, filter and sort listings, add items to their cart
+            or wishlist, and securely register/login to manage their accounts.
+          </p>
+          <ul>
+            <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript</li>
+            <li>
+              <strong>Key Features:</strong> Product filtering & sorting, cart
+              management, wishlist functionality, user authentication
+            </li>
+          </ul>
+          <a
+            href="https://sandhya85b.github.io/GlowZoneCare_Lets-shine/"
+            target="_blank"
+            >View Project</a
+          >
+        </div>
+      </section>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+      <section id="contact" class="animated-section">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
 
-        <button type="submit">Send Message</button>
-      </form>
-      <div>
-        <p>Email: <a href="mailto:sandhya85.b@gmail.com" target="_blank">sandhya85.b@gmail.com</a></p>
-        <p>
-          <i class="fab fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/sandhya-b-856776285/" target="_blank">LinkedIn_sandhyabonthu</a>
-        </p>
-        <p>
-          <i class="fab fa-github"></i>
-          <a href="https://github.com/Sandhya85b" target="_blank">github_sandhya</a>
-        </p>
-      </div>
-    </section>
-  </main>
-</body>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
 
-<script>
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
-      alert("Your message has been sent successfully!");
-    });
-</script>
-<script>
-      function toggleMenu() {
-    document.querySelector("nav").classList.toggle("active");
-  }
-  if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
-        nav.classList.remove("active");
-      }
-      document.querySelector("nav").classList.remove("active");
+          <button type="submit">Send Message</button>
+        </form>
+        <div>
+          <p>
+            Email:
+            <a href="mailto:sandhya85.b@gmail.com" target="_blank"
+              >sandhya85.b@gmail.com</a
+            >
+          </p>
+          <p>
+            <i class="fab fa-linkedin"></i>
+            <a
+              href="https://www.linkedin.com/in/sandhya-b-856776285/"
+              target="_blank"
+              >LinkedIn_sandhyabonthu</a
+            >
+          </p>
+          <p>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/Sandhya85b" target="_blank"
+              >github_sandhya</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
 
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const resumeSection = document.getElementById("resume");
-    function checkVisibility() {
-      const rect = resumeSection.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        resumeSection.classList.add("visible");
-      }
+  <script>
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Your message has been sent successfully!");
+      });
+  </script>
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburger = document.querySelector(".hamburger");
+
+      mobileMenu.classList.toggle("active");
+      hamburger.classList.toggle("active");
     }
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility();
-  });
 
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburger = document.querySelector(".hamburger");
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-  (function () {
-    emailjs.init("6YMglIZPI09kr6kCR"); // Replace with your Public Key
-  })();
+      if (
+        !mobileMenu.contains(event.target) &&
+        !hamburger.contains(event.target)
+      ) {
+        mobileMenu.classList.remove("active");
+        hamburger.classList.remove("active");
+      }
+    });
+  </script>
+  <script>
+    const slider = document.getElementById("slider");
+    const sliderValue = document.getElementById("sliderValue");
+    const tooltip = document.getElementById("tooltip");
+    const sections = document.querySelectorAll("section");
 
-  document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission refresh
+    slider.addEventListener("input", function () {
+      sliderValue.textContent = "Value: " + this.value;
+      tooltip.textContent = this.value;
+      tooltip.style.display = "block";
+      tooltip.style.left = `${(this.value / this.max) * 100}%`;
 
-    emailjs.sendForm("service_vrnx1ah", "template_ey257oo", this)
-      .then(
-        function (response) {
-          alert("Your message has been sent successfully!");
-          document.getElementById("contact-form").reset();
-        },
-        function (error) {
-          alert("Failed to send message. Please try again.");
-          console.log("Error:", error);
+      // Change background colors dynamically for each section
+      sections.forEach((section, index) => {
+        const Alabaster = Math.min(255, this.value * (index + 1));
+        const Iron = Math.min(255, this.value * (index + 1));
+        const SpicyMix = Math.min(255, this.value * (index + 1));
+        const Masala = Math.min(255, this.value * (index + 1));
+
+        const blue = 150 + index * 20;
+        section.style.backgroundColor = `rgb(${Alabaster}, ${Iron}, ${SpicyMix},${Masala})`;
+      });
+    });
+
+    slider.addEventListener("mouseout", function () {
+      tooltip.style.display = "none";
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const resumeSection = document.getElementById("resume");
+      function checkVisibility() {
+        const rect = resumeSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          resumeSection.classList.add("visible");
         }
-      );
-  });
-</script>
+      }
+      window.addEventListener("scroll", checkVisibility);
+      checkVisibility();
+    });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("6YMglIZPI09kr6kCR"); // Replace with your Public Key
+    })();
 
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission refresh
 
-<footer>
-  <p>&copy; 2025 Sandhya Bonthu. All Rights Reserved.</p>
-</footer>
+        emailjs.sendForm("service_vrnx1ah", "template_ey257oo", this).then(
+          function (response) {
+            alert("Your message has been sent successfully!");
+            document.getElementById("contact-form").reset();
+          },
+          function (error) {
+            alert("Failed to send message. Please try again.");
+            console.log("Error:", error);
+          }
+        );
+      });
+  </script>
 
+  <footer>
+    <p>&copy; 2025 Sandhya Bonthu. All Rights Reserved.</p>
+  </footer>
 </html>

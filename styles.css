@@ -1,17 +1,16 @@
-Updated CSS with better responsiveness, animations, and flicker fixes
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 /* General Reset */
 
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
-
 body {
-  /* margin-top: 4%; */
+  margin: 1%;
   background-image: url("https://i.pinimg.com/736x/26/6e/c5/266ec5ffbf5bdbf0902b54a66a9ab483.jpg");
   background-size: cover;
   background-position: center;
@@ -20,12 +19,37 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+marquee {
+  width: 50%;
+  color: #eee;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+}
+marquee {
+  display: flex;
+  gap: 20px;
+  /* white-space: nowrap; */
+  animation: scrolling 20s linear infinite;
+}
+@keyframes scrolling {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 /* Responsive Typography */
 h1 {
   color: blue;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+
+  font-stretch: expanded;
   text-align: center;
-  margin-top: 20px;
+  margin: 1%;
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -37,9 +61,9 @@ p {
 h2 {
   color: blue;
   width: 100%;
-  margin: 5%;
+  margin: 1%;
   padding-top: 2%;
-  font-size: 150%;
+  font-stretch: expanded;
   align-items: center;
   justify-content: center;
 }
@@ -57,134 +81,252 @@ h2 {
 
 /* Header Styling */
 header {
-  margin-top: 0%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  padding: 1%;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 15px 20px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  position:sticky;
+  position: sticky; /* Makes it stick while scrolling */
+  top: 0; /* Ensures it sticks at the top */
+  z-index: 9999; /* Very high priority */
 }
 
-.profile-container h1 {
-  color: blue;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+.navbar {
+  width: 100%;
+  height: 60px; /* Adjust as needed */
+    padding: 10px 20px; /* Reduce padding */
+    display: flex;
+    align-items: center;
+  justify-content: space-evenly;
+
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Makes it stick while scrolling */
+  top: 0; /* Ensures it sticks at the top */
+  z-index: 9999; /* Very high priority */
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu li a {
+  color: rgb(21, 19, 19);
+  text-decoration: none;
+  font-size: 18px;
 }
 
 .hamburger {
-  color: blue;
-  display: block;
+  display: none;
+  flex-direction: column;
   cursor: pointer;
-  font-size: 1.8rem;
-  z-index: 1000;
 }
 
-nav {
+.hamburger div {
+  width: 30px;
+  height: 4px;
+  background: rgb(26, 49, 167);
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  width: 100%;
   display: none;
-  
   position: absolute;
   top: 60px;
   right: 20px;
-  background: rgba(255, 255, 255, 0.95);
+  background:#007bff;
   width: 200px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  border-radius: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
-nav.active {
+.mobile-menu.active {
   display: block;
+  animation: slideDown 0.3s ease-in-out;
 }
 
-nav ul {
+.mobile-menu ul {
   list-style: none;
+  padding: 0;
+}
+
+.mobile-menu ul li {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+}
+
+/* Hamburger Animation */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  marquee {
+    visibility: visible;
+  }
+}
+
+/* slider */
+.slider-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+  width: 20%;
+  margin-top: 20px;
+  position: relative;
 }
-
-nav ul li {
-
-  text-align: center;
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 8px;
+  background: #ddd;
+  outline: none;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
-
-nav ul li a {
-  text-decoration: none;
-  color: blue;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-  display: block;
-  padding: 10px;
-  
+input[type="range"]::-webkit-slider-runnable-track {
+  background: blue;
+  height: 8px;
+  border-radius: 5px;
 }
-
-nav ul li a:hover {
-  color: #007bff;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -6px;
+  position: relative;
 }
-
+#sliderValue {
+  font-size: 1em;
+  margin-top: 10px;
+}
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  display: none;
+}
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   nav {
-      width: 180px;
+    width: 180px;
   }
 }
 
 @media (max-width: 480px) {
   nav {
-      width: 150px;
+    width: 150px;
   }
   .hamburger {
-    
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 }
-
+.firstAbout {
+  display: flex;
+  max-width: 80%;
+  white-space-collapse: 100%;
+}
 /* Responsive Sections */
 section {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   /* max-width: 1200px; */
-  margin: 20px auto;
-  padding: 5%;
+  margin: 2%;
+  /* padding: 2%; */
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 1s ease-in-out;
   transition: transform 0.3s ease-in-out;
+  align-items: center;
+  justify-content: center;
 }
 
 section:hover {
   transform: scale(1.02);
 }
-/* First Section Styling */
+/*........................... First Section Styling */
 .first {
-  margin-top: 15%;
+  margin-top: 5%;
   width: 50%;
   justify-content: center;
+ 
+  align-items: center;
   position: relative;
   text-align: center;
-  animation: flicker 1.5s infinite alternate;
+  animation: flicker 5s infinite alternate;
 }
 
 .first img {
-  width: 40%;
-  border-radius: 50%;
+  width: 100%;
+  border-radius: 20%;
+ 
 }
 
-.first::after {
-  content: "\2193"; /* Unicode for down arrow */
-  font-size: 2rem;
-  color: #007bff;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -40px;
-  animation: arrowBounce 1.5s infinite ease-in-out;
-}
-#about p{
+#about p {
   padding: 5%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-
 }
 @keyframes fadeInUp {
   from {
@@ -209,7 +351,6 @@ section:hover {
 }
 
 .skill {
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -240,7 +381,7 @@ section:hover {
 
 .project {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   gap: 20px;
   background: white;
@@ -249,8 +390,7 @@ section:hover {
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  width: 70%;
-  height: 700px;
+
   text-align: center;
 }
 
@@ -278,33 +418,30 @@ section:hover {
   font-weight: bold;
 }
 
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  section {
-    width: 90%;
-    padding: 40px 15px;
-  }
-  .resume-preview {
-    width: 100%;
-    height: 400px;
-  }
-  .project-card {
-    width: 90%;
-  }
-
+.container {
+  flex-direction: column;
+  align-items: center;
+}
+section {
+  width: 90%;
+  padding: 40px 15px;
+}
+.resume-preview {
+  width: 100%;
+  height: 400px;
+}
+.project-card {
+  width: 90%;
+}
 
 @media (max-width: 768px) {
-
-  section{
+  section {
     padding: 0%;
   }
   .resume-container {
     padding: 0%;
     margin: 0%;
-}
- 
+  }
 }
 @media (max-width: 480px) {
   .card {
@@ -316,16 +453,17 @@ section:hover {
   .resume-container {
     padding: 0%;
     margin: 0%;
-}
+  }
 
   .project-card {
     width: 90%;
-   
   }
-  #projects{
+  #projects {
     padding: 5%;
   }
-
+  #contact {
+    padding: auto;
+  }
 }
 /* First Section Styling */
 @keyframes fadeInUp {
@@ -339,9 +477,8 @@ section:hover {
   }
 }
 
-
 /* resume */
-#resume .resume-container iframe{
+#resume .resume-container iframe {
   width: 100%;
   max-height: max-content;
 }
@@ -395,7 +532,7 @@ section:hover {
 
 /* Contact Section */
 
-#contact{
+#contact {
   background-image: url("https://t3.ftcdn.net/jpg/05/30/96/04/240_F_530960431_c8fPd3HansYvrSJ4fJxZqp9OhjQmYoll.jpg");
   background-size: cover;
   background-position: center;
@@ -436,4 +573,61 @@ section:hover {
 
 footer {
   background: #fff;
+}
+
+.container {
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+}
+
+.scroll-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome & Safari */
+}
+
+.item {
+  min-width: 300px;
+  height: 200px;
+  background: #4caf50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.left {
+  left: -40px;
+}
+
+.right {
+  right: -40px;
 }

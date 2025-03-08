@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Horizontal Scrolling</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .scroll-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+            scroll-behavior: smooth;
+            width: 100%;
+        }
+
+        .section {
+            flex: 0 0 50%;
+            text-align: center;
+            padding: 40px;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .first {
+            background: #f5f5f5;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            background: #fff;
+            text-align: left;
+            padding: 40px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 18px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-wrapper {
+                width: 100%;
+            }
+            .section {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="scroll-container">
+        <button class="carousel-nav prev">◀</button>
+        <div class="carousel-wrapper" id="carousel">
+            <section class="section first visible">
+                <img src="https://res.cloudinary.com/dgbdcjnkw/image/upload/v1739433239/lfagxtdik6chbivc7vn2.jpg"
+                    alt="Sandhya Bonthu" class="profile-pic" />
+                <p>Software Developer & Tester</p>
+            </section>
+            <section class="section about">
+                <h2>About Me</h2>
+                <p>
+                    Hi! I'm Sandhya Bonthu, a passionate software developer and tester with
+                    expertise in web development and automation testing.
+
+                    I hold an M.Tech in Electronics and Communication Engineering and have
+                    completed advanced training in software testing and web development.
+
+                    My journey includes working on real-world projects involving JavaScript,
+                    Node.js, Express, MongoDB, and Selenium automation. I am driven by a
+                    passion for learning and continuously improving my skills.
+
+                    Currently, I am exploring Software development, Web Engineering, and Software Testing.
+                </p>
+            </section>
+        </div>
+        <button class="carousel-nav next">▶</button>
+    </div>
+
+    <script>
+        const carousel = document.getElementById("carousel");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const sections = document.querySelectorAll(".section");
+        let index = 0;
+
+        function updateSections() {
+            sections.forEach((section, i) => {
+                if (i === index) {
+                    section.classList.add("visible");
+                } else {
+                    section.classList.remove("visible");
+                }
+            });
+        }
+
+        nextBtn.addEventListener("click", () => {
+            index = (index + 1) % sections.length;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            updateSections();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            index = (index - 1 + sections.length) % sections.length;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            updateSections();
+        });
+
+        // Auto-scroll every 5 seconds (optional)
+        setInterval(() => {
+            index = (index + 1) % sections.length;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+            updateSections();
+        }, 5000);
+    </script>
+
+</body>
+</html>
